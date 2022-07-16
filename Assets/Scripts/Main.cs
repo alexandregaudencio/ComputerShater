@@ -14,7 +14,7 @@ public class Main : MonoBehaviour
     public float forcaGravidade = 9.8f;
     public bool GPU = true;
 
-    private int loop = 500;
+    private int loop = 100;
     private float totalTime = 0;
     private int contador = 0;
 
@@ -191,7 +191,7 @@ public class Main : MonoBehaviour
             {
                 if (sphere[i].forca != 0)
                 {
-                    sphere[i].speed = sphere[i].massa + sphere[i].forca;
+                    sphere[i].speed += (sphere[i].forca / sphere[i].massa) * Time.deltaTime;
                     sphere[i].position.y -= sphere[i].speed * Time.deltaTime;
                     positionSphere[i].position = sphere[i].position;
                 }

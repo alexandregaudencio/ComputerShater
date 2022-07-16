@@ -59,8 +59,9 @@ void CSMain (uint3 id : SV_DispatchThreadID)
             {
                 if (parar == 0)
                 {
-                    s.speed = s.massa + s.forca;
+                    s.speed +=  (s.forca/s.massa)*deltaTime;
                     s.position.y -= s.speed  * deltaTime;
+
                 }
             }
                 
